@@ -29,7 +29,7 @@ namespace Server.InterAction
                 if (startindex >= len + 4)
                 {
                     MainPack pack = (MainPack)MainPack.Descriptor.Parser.ParseFrom(buffer,4,len);
-                    HandleRequest(pack);
+                    HandleRequest(pack);//处理包体信息
                     Array.Copy(buffer, len + 4, buffer, 0, startindex - 4 - len);
                     startindex -= (4 + len);
                 }

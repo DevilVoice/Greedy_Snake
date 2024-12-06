@@ -58,7 +58,7 @@ namespace Server.Servers
             {
                 Console.WriteLine(e.ToString());
                 Console.WriteLine("Exceptional Quit!");
-                Close();
+                Close();//若未接收到信息，则客户端退出
             }
         }
         public void Send(MainPack pack)
@@ -98,7 +98,7 @@ namespace Server.Servers
             Console.WriteLine("a client quit");
             server.Remove(this);
             if (user.Exists(t => t == CurrentUser))
-                user.Remove(CurrentUser);
+                user.Remove(CurrentUser);//移除登陆状态
             socket.Close();
             userdata.GetSqlConnection.Close();
         }

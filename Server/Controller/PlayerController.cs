@@ -37,7 +37,7 @@ namespace Server.Controller
                 {
                     pack.Player.Id = playerNum;
                     Position p = new Position();
-                    if (pack.Player.Id == 0)
+                    if (pack.Player.Id == 0)//初始化玩家位置
                     {
 
                         p.X = 22.5f;
